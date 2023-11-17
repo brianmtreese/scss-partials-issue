@@ -1,0 +1,5 @@
+@use 'test-import';
+
+:host {
+  color: test-import.$variable; 
+}

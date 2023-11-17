@@ -1,6 +1,17 @@
+import { Component } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
-import { AppComponent } from './app/app.component';
+import 'zone.js';
+import { TestComponentComponent } from './test-component/test-component.component';
 
-bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  template: `
+    <app-test-component></app-test-component>
+  `,
+  imports: [TestComponentComponent]
+})
+export class App {
+}
+
+bootstrapApplication(App); 
